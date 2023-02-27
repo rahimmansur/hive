@@ -85,13 +85,11 @@ class PostsController extends Controller
 
         $post = Post::withTrashed()->where('id', $id)->first();
 
-        //soft delete
-        $post -> delete();
 
-        if ($post -> trashed()){
-            $post -> forceDelete();
+        if ($post -> trashed()) {
+        $post -> forceDelete();
         } else {
-            $post -> delete();
+        $post -> delete();
         }
 
         //flash message
@@ -102,10 +100,12 @@ class PostsController extends Controller
     }
 
     /**
-     * Display a list of deleted posts.
+     * Display a list of trashed posts.
+     * @return \Illuminate\Http\Response
      */
     public function trashed()
     {
+        //view soft deleted posts
         $trashed = Post::withTrashed()->get();
 
         //redirect user

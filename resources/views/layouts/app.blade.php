@@ -107,9 +107,9 @@
                             {{--//end first list--}}
 
                             {{--//second list--}}
-{{--                            <ul class="list-group mt-5">--}}
+{{--                            <ul class="list-group mt-3">--}}
 {{--                                <li class="list-group-item">--}}
-{{--                                    <a href="{{route('trashed-posts.index')}}">Bin</a>--}}
+{{--                                    <a href="{{route('trashed-posts.index')}}">Trashed Bin</a>--}}
 {{--                                </li>--}}
 {{--                            </ul>--}}
                             {{--//end second list--}}
