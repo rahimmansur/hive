@@ -57,7 +57,7 @@
                             <li><a href="{{route('home')}}" class="nav-link px-2 text-secondary">Home</a></li>
                             <li><a href="{{route('posts.index')}}" class="nav-link px-2 text-white">Posts</a></li>
                             <li><a href="{{route('categories.index')}}" class="nav-link px-2 text-white">Category</a></li>
-                            <li><a href="{{route('trashed-posts.index')}}" class="nav-link px-2 text-white">Bin</a></li>
+{{--                            <li><a href="{{route('trashed-posts.index')}}" class="nav-link px-2 text-white">Bin</a></li>--}}
                             <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                         </ul>
                     </div>
