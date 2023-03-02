@@ -15,7 +15,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('posts.index')->with('posts',Post::all());
+        return view('posts.index')->with('posts', Post::all());
     }
 
     /**
@@ -67,11 +67,11 @@ class PostsController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        $data = $request -> only(['title','description','published_at','information']);
+        $data = $request->only(['title', 'description', 'published_at', 'information']);
 
-        $post -> update($data);
+        $post->update($data);
 
-        session() ->flash('success','Post updated successfully');
+        session()->flash('success', 'Post updated successfully');
 
         return redirect(route('posts.index'));
 
@@ -82,20 +82,19 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-
         $post = Post::withTrashed()->where('id', $id)->first();
 
 
-        if ($post -> trashed()) {
-        $post -> forceDelete();
+        if ($post->trashed()) {
+            $post->forceDelete();
         } else {
-        $post -> delete();
+            $post->delete();
         }
 
-        //flash message
-        session()->flash('success','Post deleted successfully');
+        // flash message
+        session()->flash('success', 'Post deleted successfully');
 
-        //redirect user
+        // redirect user
         return redirect(route('posts.index'));
     }
 

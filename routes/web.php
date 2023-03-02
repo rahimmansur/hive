@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +23,9 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::resource('categories', 'App\Http\Controllers\CategoriesController');
-Route::resource('posts', 'App\Http\Controllers\PostsController');
+Route::resource('categories', CategoriesController::class);
+Route::resource('posts', 'App\Http\Controllers\PostsController')->middleware('auth');
 
-Route::get('trashed-posts','App\Http\Controllers\PostsController@trashed') -> name('trashed-posts.index');
+Route::get('trashed-posts', 'App\Http\Controllers\PostsController@trashed')->name('trashed-posts.index');
