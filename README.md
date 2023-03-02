@@ -17,7 +17,7 @@ The following tools are required in order to start the installation.
 - Run `composer install`
 - Run `php artisan key:generate`
 - Run `php artisan migrate` (database table for test)
-- Run `npm install dev`
+- Run `npm install`
 - Run `npm run dev`
 
 You can now visit the app in your browser by visiting [https://hive.test](http://hive.test).
